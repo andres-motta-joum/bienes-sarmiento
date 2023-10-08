@@ -1,0 +1,59 @@
+.opciones{
+    width: 80%;
+    height: 90px;
+    margin: 30px auto 25px auto;
+    max-width: 1400px;
+    min-width: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3%;
+    div{
+        background-color: white;
+        box-shadow: 0 -0.1px 2.6px rgba(0,0,0,0.17), 0 3.1px 2.3px rgba(0,0,0,0.05);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .1s;
+        h2{
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: .4px;
+            word-spacing: 1px;
+            margin: 0;
+            transform: translate(4px, -5px);
+            ng-icon{
+                font-size: 24px;
+                transform: translate(-4px, 6px);
+            }
+        }
+        &:hover{
+            background: #2b353c;
+            *{
+                color: white;
+            }
+        }
+    }
+    div:nth-child(1) ng-icon{
+        color: #25e287;
+    }
+    div:nth-child(2) ng-icon{
+        color: #ff7b57;
+    }
+    div:nth-child(3) ng-icon{
+        color: #57bcff;
+    }
+}
+
+.resumen{
+    width: 80%;
+    height: 200px;
+    background-color: white;
+    box-shadow: 0 -0.1px 2.6px rgba(0,0,0,0.17), 0 3.1px 2.3px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 1400px;
+    min-width: 450px;
+}

@@ -1,0 +1,19 @@
+<app-barra-menu></app-barra-menu>
+<div class="opciones">
+    <div (click)="navegar('nuevo-ingreso')">
+        <h2><ng-icon name="matTrendingUpOutline"></ng-icon> Agregar ingreso</h2>
+    </div>
+    <div (click)="navegar('nuevo-egreso')">
+        <h2><ng-icon name="matTrendingDownOutline"></ng-icon> Agregar egreso</h2>
+    </div>
+    <div (click)="navegar('historial')">
+        <h2><ng-icon name="matHistoryOutline"></ng-icon> Historial</h2>
+    </div>
+</div>
+
+<div class="resumen">
+    <router-outlet></router-outlet>
+    <ng-template *ngIf="inicio">
+        
+    </ng-template>
+</div>
