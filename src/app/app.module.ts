@@ -7,30 +7,40 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './navegacion/inicio/inicio.component';
 import { BarraMenuComponent } from './navegacion/componentes-generales/barra-menu/barra-menu.component';
-import { FooterComponent } from './navegacion/componentes-generales/footer/footer.component';
 import { NuevoIngresoComponent } from './navegacion/nuevo-ingreso/nuevo-ingreso.component';
 import { NuevoEgresoComponent } from './navegacion/nuevo-egreso/nuevo-egreso.component';
 import { HistorialComponent } from './navegacion/historial/historial.component';
 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore} from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule}  from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+import { CodigoComponent } from './navegacion/componentes-generales/codigo/codigo.component';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     BarraMenuComponent,
-    FooterComponent,
     NuevoIngresoComponent,
     NuevoEgresoComponent,
-    HistorialComponent
+    HistorialComponent,
+    CodigoComponent
   ],
   imports: [
     NgIconsModule.withIcons({}),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CurrencyPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

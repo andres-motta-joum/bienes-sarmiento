@@ -1,25 +1,24 @@
 .opciones{
     width: 80%;
     height: 90px;
-    margin: 30px auto 25px auto;
+    margin: 32px auto 25px auto;
     max-width: 1400px;
-    min-width: 450px;
+    min-width: 355px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3%;
     div{
         background-color: white;
         box-shadow: 0 -0.1px 2.6px rgba(0,0,0,0.17), 0 3.1px 2.3px rgba(0,0,0,0.05);
-        border-radius: 15px;
+        border-radius: 13px;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        transition: .1s;
         h2{
-            color: #666;
+            color: #5c5c5c;
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 480;
             letter-spacing: .4px;
             word-spacing: 1px;
             margin: 0;
@@ -27,6 +26,18 @@
             ng-icon{
                 font-size: 24px;
                 transform: translate(-4px, 6px);
+            }
+            @media (max-width: 700px) {
+                ng-icon{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 28px;
+                    top: -27px;
+                }
+                text-align: center;
+                transform: translateY(10px);
+                width: calc(100% - 10px);
             }
         }
         &:hover{
@@ -49,11 +60,148 @@
 
 .resumen{
     width: 80%;
-    height: 200px;
+    max-width: 1400px;
+    min-width: 355px;
+    margin: auto;
+}
+
+.content{
+    width: 100%;
     background-color: white;
     box-shadow: 0 -0.1px 2.6px rgba(0,0,0,0.17), 0 3.1px 2.3px rgba(0,0,0,0.05);
-    border-radius: 15px;
-    margin: 0 auto;
-    max-width: 1400px;
-    min-width: 450px;
+    border-radius: 13px;
+    margin-bottom: 80px;
+    h1{
+        line-height: 50px;
+        font-size: 18px;
+        margin: 0;
+        color: #606060;
+        letter-spacing: .6px;
+        font-weight: 500;
+        border-bottom: 1px solid #e9e9e9;
+        padding-left: 40px;
+        padding-top: 2px;
+    }
+    >div{
+        padding: 30px 40px 40px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 8%;
+        row-gap: 55px;
+        >div{
+            h2{
+                margin: 0;
+                font-size: 16px;
+                margin: 0;
+                color: #6a6a6a;
+                letter-spacing: .6px;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+        }
+
+        //---------------------------------------------
+        .balance{
+            box-shadow: 0 -0.1px 2.6px rgba(0,0,0,0.24), 0 3.1px 2.3px rgba(0,0,0,0.07);
+            border-left: 3.5px solid #333e46eb;
+        }
+        .balance, .ingresos, .egresos, .distribucion{
+            background: #f8f8f9;
+            border-radius: 7px;
+            padding: 10px 22px;
+            *{
+                color: #666;
+            }
+            >div{
+                position: relative;
+                display: flex;
+                width: 100%;
+                height: 50px;
+                *{
+                    margin: 0;
+                    line-height: 50px;
+                    font-size: 15px;
+                    font-weight: 450;
+                }
+                p{
+                    color: #505050;
+                }
+                h4{
+                    position: absolute;
+                    right: 0;
+
+                }
+            }
+            >div:nth-child(2){
+                border-bottom: 1px solid #ccc;
+            }
+        }
+
+        //css independiente ---------------
+        .ingresos, .egresos, .distribucion{
+            padding: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            >div{
+                border-bottom: 1px solid #ddd !important;
+                padding: 8px 0;
+                *{
+                    padding: 0 20px;
+                }
+            }
+            >div:nth-child(9){
+                border-bottom: none !important;
+            }
+        }
+
+        .distribucion{
+            padding: 0;
+            height: 130px;
+            >div{
+                border-bottom: none !important;
+                padding: 8px 0;
+                *{
+                    padding: 0 20px;
+                }
+            }
+            >div:nth-child(1){
+                border-bottom: 1px solid #ddd !important;
+            }
+        }
+
+
+        .ingresos, .egresos{
+            >div:nth-child(5){
+                border: none !important;
+            }
+        }
+        .ingresos h4 span{
+            color: #25ca93;
+            font-size: 17px;
+            padding: 0 8px;
+        }
+        .egresos h4 span{
+            color: #ff816b !important;
+            font-size: 18px;
+            padding: 0 8px;
+        }
+
+        .icon-up{
+            color: #04bd85;
+        }
+        .icon-down{
+            color: #ff5d41;
+        }
+
+        .ingreso{
+            color: #009765 !important;
+        }
+        .egreso{
+            color: #e13f22 !important;
+        }
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+        }
+    }
 }

@@ -1,1 +1,94 @@
-<p>historial works!</p>
+<div class="content">
+    <h1>Historial</h1>
+    <div class="contenidoInf">
+        <div class="mes">
+            <div class="boton-prev"><ng-icon name="heroChevronLeft"></ng-icon></div>
+            <h1>Octubre</h1>
+            <div class="boton-next"><ng-icon name="heroChevronRight"></ng-icon></div>
+        </div>
+        <div></div>
+        <div>
+            <div class="balance">
+                <div>
+                    <p>Ingresos</p>
+                    <h4 class="ingreso">$ 0</h4>
+                </div>
+                <div>
+                    <p>Egresos</p>
+                    <h4 class="egreso">$ 0</h4>
+                </div>
+                <div>
+                    <p>Balance</p>
+                    <h4>$ 0</h4>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="headerSeleccion">
+                <div [ngClass]="{'selectedUp': ingresos}" (click)="ingresos = true; egresos = false">
+                    <h2>Ingresos</h2>
+                    <ng-icon name="heroArrowUpMini"></ng-icon>
+                </div>
+                <div [ngClass]="{'selectedDown': egresos}" (click)="ingresos = false; egresos = true">
+                    <h2>Egresos</h2>
+                    <ng-icon name="heroArrowDownMini"></ng-icon>
+                </div>
+            </div>
+            <div class="operaciones" *ngIf="ingresos">
+                <div>
+                    <div>
+                        <p>Adriana</p>
+                        <p>Arriendo</p>
+                    </div>
+                    <div>
+                        <h4>+ $ 200.000</h4>
+                        <p>13 de octubre</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Ivan</p>
+                        <p>Sitio web</p>
+                    </div>
+                    <div>
+                        <h4>+ $ 1'100.000</h4>
+                        <p>11 de octubre</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="operaciones" *ngIf="egresos">
+                <div>
+                    <div>
+                        <p>Adriana</p>
+                        <p>Arriendo</p>
+                    </div>
+                    <div>
+                        <h4>- $ 200.000</h4>
+                        <p>13 de octubre</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Ivan</p>
+                        <p>Sitio web</p>
+                    </div>
+                    <div>
+                        <h4>- $ 1'100.000</h4>
+                        <p>11 de octubre</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>José</p>
+                        <p>Jardín mantenimiendo</p>
+                    </div>
+                    <div>
+                        <h4>- $ 345.000</h4>
+                        <p>7 de octubre</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

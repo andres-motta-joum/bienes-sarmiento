@@ -13,7 +13,90 @@
 
 <div class="resumen">
     <router-outlet></router-outlet>
-    <ng-template *ngIf="inicio">
-        
-    </ng-template>
+    
+    <div class="content" *ngIf="inicio">
+        <h1>Inicio</h1>
+        <div>
+            <div>
+                <h2>Resumen general</h2>
+                <div class="balance">
+                    <div>
+                        <p>Ingresos</p>
+                        <h4 class="ingreso">$ 0</h4>
+                    </div>
+                    <div>
+                        <p>Egresos</p>
+                        <h4 class="egreso">$ 0</h4>
+                    </div>
+                    <div>
+                        <p>Balance</p>
+                        <h4>$ 0</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Distribución del saldo</h2>
+                <div class="distribucion">
+                    <div>
+                        <p>Banco</p>
+                        <h4>$ 1'200.000</h4>
+                    </div>
+                    <div>
+                        <p>CDT</p>
+                        <h4>$ 865.000</h4>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2><ng-icon name="matArrowUpward" class="icon-up"></ng-icon> Resumen de ingresos</h2>
+                <div class="ingresos">
+                    <div>
+                        <p>Fanny</p>
+                        <h4><span>+</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>Adriana</p>
+                        <h4><span>+</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>Claudia</p>
+                        <h4><span>+</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>Ivan</p>
+                        <h4><span>+</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>José</p>
+                        <h4><span>+</span> $ 0</h4>
+                    </div> 
+                </div>
+            </div>
+            <div>
+                <h2><ng-icon name="matArrowDownward" class="icon-down"></ng-icon> Resumen de egresos</h2>
+                <div class="egresos">
+                    <div>
+                        <p>Fanny</p>
+                        <h4><span>-</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>Adriana</p>
+                        <h4><span>-</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>Claudia</p>
+                        <h4><span>-</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>Ivan</p>
+                        <h4><span>-</span> $ 0</h4>
+                    </div>
+                    <div>
+                        <p>José</p>
+                        <h4><span>-</span> $ 0</h4>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

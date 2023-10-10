@@ -1,0 +1,18 @@
+<div class="sombra" (click)="cerrarContenido()"></div>
+<div class="ingresarCodigoSMS">
+        <h1>Código</h1>
+        <br>
+        <div class="verification-code">
+            <input #firstInput class="verification-input" type="number" max="9" maxlength="1" (keyup)="onInput($event, $event, 0)" (keydown)="onInputBefore($event, $event, 0)" [ngClass]="{ 'error': codigoIncorrecto }"  #verificationInput />
+            <input class="verification-input" type="number" max="9" maxlength="1" (keyup)="onInput($event, $event, 1)" (keydown)="onInputBefore($event, $event, 1)" [ngClass]="{ 'error': codigoIncorrecto }" #verificationInput />
+            <div></div>
+            <input class="verification-input" type="number" max="9" maxlength="1" (keyup)="onInput($event, $event, 2)" (keydown)="onInputBefore($event, $event, 2)" [ngClass]="{ 'error': codigoIncorrecto }" #verificationInput />
+            <input class="verification-input" type="number" max="9" maxlength="1" (keyup)="onInput($event, $event, 3)" (keydown)="onInputBefore($event, $event, 3)" [ngClass]="{ 'error': codigoIncorrecto }" #verificationInput />
+        </div>
+        <button (click)="submit()" [ngClass]="{'cargando': cargando, 'success': actualizacionExitosa}">
+            <span *ngIf="!cargando">Validar</span> 
+            <span class="loading" *ngIf="cargando && !actualizacionExitosa"></span>
+            <ng-icon name="matCheck" *ngIf="actualizacionExitosa"></ng-icon>
+        </button>
+        <ng-icon name="heroXMarkMini" (click)="cerrarContenido()"></ng-icon>
+</div>
